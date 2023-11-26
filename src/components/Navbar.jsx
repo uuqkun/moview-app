@@ -1,8 +1,22 @@
+import { Link } from "react-router-dom";
+
+import styles from "../styles/global.module.css";
+import { logo } from "../assets";
+
 const Navbar = () => {
   return (
-    <div>
-      <h1>navbar</h1>
-    </div>
+    <nav className={styles.navbar}>
+      <img src={logo} alt="Moview logo" className={styles.logo} />
+
+      <ul className={styles.navbar__list}>
+        <Link className={styles.gray_100}  to="/">
+          Movies
+        </Link>
+        <Link className={styles.gray_100} to="/tv-shows">
+          TV Shows
+        </Link>
+      </ul>
+    </nav>
   );
 };
 

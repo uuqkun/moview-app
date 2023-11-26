@@ -5,3 +5,4 @@ export { default as MovieList } from './MovieList';
 export { default as Searchbar } from './Searchbar';
 export { default as ThemeSwitch } from './ThemeSwitch';
 export { default as Navbar } from './Navbar';
+export { default as TvShows } from './TvShows';
