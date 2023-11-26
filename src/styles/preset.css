@@ -11,6 +11,9 @@
   --success-500: #05ce91;
 
   --error-500: #ff6161;
+
+  --gray-200: #A8AEBF;
+  --gray-100: #C3C8D4;
 }
 
 * {
@@ -70,5 +73,10 @@ h6 {
   font-size: 16px;
   line-height: 20px;
   letter-spacing: -2%;
+}
+
+li, a { 
+  list-style: none;
+  text-decoration: none;
 }
 
