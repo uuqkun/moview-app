@@ -2,7 +2,7 @@
 /* global */
 .container {
   margin: 0 auto;
-  max-width: 1440px;
+  max-width: 1200px;
 }
 
 /* navbar */
@@ -13,7 +13,7 @@
 
 .navbar {
   margin: 0 auto 5rem;
-  max-width: 1440px;
+  max-width: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,6 +27,6 @@
 
 /* Movie List */
 .movies {
-  max-width: 1440px;
+  max-width: 1200px;
   margin: 0 auto;
 }/*# sourceMappingURL=global.css.map */
