@@ -95,7 +95,7 @@
 }
 
 .navbar {
-  margin: 0 auto;
+  margin: 0 auto 5rem;
   max-width: 1440px;
 
   display: flex;
