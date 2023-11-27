@@ -4,7 +4,7 @@ import { MovieList, TvShows, Navbar } from "./components";
 
 function App() {
   return (
-    <main className="">
+    <main>
       <Router>
         <Navbar />
         <Routes>

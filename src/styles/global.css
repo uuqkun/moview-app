@@ -1,0 +1,32 @@
+@import url("preset.css");
+/* global */
+.container {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+/* navbar */
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.navbar {
+  margin: 0 auto 5rem;
+  max-width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+.navbar .navbar__list {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Movie List */
+.movies {
+  max-width: 1440px;
+  margin: 0 auto;
+}/*# sourceMappingURL=global.css.map */

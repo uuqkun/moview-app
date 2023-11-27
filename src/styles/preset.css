@@ -4,6 +4,7 @@
   --primary-700: #362c92;
   --primary-600: #483bc3;
   --primary-500: #5a4af4;
+  --primary-400: #7B6EF6;
 
   --secondary-900: #062032;
   --secondary-500: #1ea5fc;
@@ -12,8 +13,11 @@
 
   --error-500: #ff6161;
 
-  --gray-200: #A8AEBF;
-  --gray-100: #C3C8D4;
+
+  --gray-300: #8E95A9;
+  --gray-200: #a8aebf;
+  --gray-100: #c3c8d4;
+  --gray-50: #EBEEF5;
 }
 
 * {
@@ -31,7 +35,6 @@
   background: var(--secondary-900);
 }
 
-
 /* font sizes */
 h1 {
   font-weight: 600;
@@ -43,7 +46,7 @@ h1 {
 h2 {
   font-weight: 600;
   font-size: 48px;
-  line-height: 60px;
+  line-height: 80px;
   letter-spacing: -2%;
 }
 
@@ -75,8 +78,120 @@ h6 {
   letter-spacing: -2%;
 }
 
-li, a { 
+p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+li,
+a {
   list-style: none;
   text-decoration: none;
 }
 
+
+
+.caption {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0;
+}
+
+.body-large {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0;
+}
+
+.body-regular {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.body-small {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+}
+
+
+
+/* colors */
+.primary_900 {
+  color: var(--primary-900);
+}
+.primary_800 {
+  color: var(--primary-800);
+}
+.primary_700 {
+  color: var(--primary-700);
+}
+.primary_600 {
+  color: var(--primary-600);
+}
+.primary_500 {
+  color: var(--primary-500);
+}
+
+.secondary_900 {
+  color: var(--secondary-900);
+}
+
+.secondary_500 {
+  color: var(--secondary-500);
+}
+
+.success_500 {
+  color: var(--success-500);
+}
+
+.error_500 {
+  color: var(--error-500);
+}
+
+
+.gray_300 {
+  color: var(--gray-300);
+}
+.gray_200 {
+  color: var(--gray-200);
+}
+.gray_100 {
+  color: var(--gray-100);
+}
+.gray_50 {
+  color: var(--gray-50);
+}
+
+.textWhite {
+  color: #fff;
+}
+
+.text-dark {
+  color: #000;
+}
+
+
+/* buttons */
+.btn_base { 
+  padding: 8px 32px;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  background: transparent;
+  color: var(--gray-200);
+}
+
+.btn_primary {
+  background: var(--primary-400);
+  color: #fff;
+}

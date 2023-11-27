@@ -1,8 +1,10 @@
 import React from "react";
+import { searchIcon } from "../assets";
 
 const Searchbar = () => {
   return (
     <div>
+      <img src={searchIcon} alt="search icon" />
       <input
         type="text"
         name="title"
