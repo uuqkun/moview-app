@@ -48,7 +48,9 @@ const MovieDetails = () => {
                 </div>
                 <div className="details__attribute">
                   <h6>Genre(s)</h6>
-                  <p className="body-large">{selectedMovie.genre}</p>
+                  {selectedMovie && selectedMovie.genre.map((genre) => {
+                    return <p className="body-large">{genre}</p>;
+                  })}
                 </div>
               </figcaption>
             </div>
