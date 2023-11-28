@@ -5,10 +5,12 @@ import { logo } from "../assets";
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <img src={logo} alt="Moview logo" className="logo" />
+      <Link to="/" className="gray_100">
+        <img src={logo} alt="Moview logo" className="logo" />
+      </Link>
 
       <ul className="navbar__list">
-        <Link className="gray_100"  to="/">
+        <Link className="gray_100" to="/movies">
           Movies
         </Link>
         <Link className="gray_100" to="/tv-shows">
