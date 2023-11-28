@@ -7,3 +7,4 @@ export { default as ThemeSwitch } from './ThemeSwitch';
 export { default as Navbar } from './Navbar';
 export { default as TvShows } from './TvShows';
 export { default as MovieDetails } from './MovieDetails';
+export { default as Footer } from './Footer';

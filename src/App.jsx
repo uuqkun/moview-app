@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import { MovieList, TvShows, Navbar, MovieDetails } from "./components";
+import { MovieList, TvShows, Navbar, MovieDetails, Footer } from "./components";
 import { StoreProvider } from "./services/store";
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
             <Route path="/tv-shows" element={<TvShows />} />"
             <Route path="*" element={<h1>Not Found</h1>} />
           </Routes>
+          <Footer />
         </Router>
       </main>
     </StoreProvider>

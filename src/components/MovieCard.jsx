@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import { useMovieManager } from "../services/store";
 
 const MovieCard = ({ data }) => {
-  const { imdbid, updateImdbid } = useMovieManager();
+  const { updateImdbid } = useMovieManager();
 
   const handleClick = () => {
     updateImdbid(data.imdbid);
   };
 
   return (
-    <Link to={`/movies/${data.imdbid}`} onClick={handleClick}>
+    <Link to={`/movies/${data.imdbid}`} onClick={handleClick} style={{height: "540px"}}>
       <article className="moviecard">
         <img src={data.image} alt={data.title} className="moviecard__img" />
         <div className="moviecard__texts">

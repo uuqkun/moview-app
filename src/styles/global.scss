@@ -80,7 +80,7 @@
 
 .moviecard {
   width: 282px;
-  // height: 480px;
+  height: 100%;
 
   border-radius: 12px;
   padding: 8px;
@@ -218,6 +218,29 @@
           }
         }
       }
+    }
+  }
+}
+
+// footer 
+footer { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 5rem 0;
+  max-width: 1200px;
+  margin: 10rem auto;
+
+  border-top: 1px solid var(--gray-400);
+
+  .footer__logo { 
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    h5 { 
+      font-weight: 600;
     }
   }
 }

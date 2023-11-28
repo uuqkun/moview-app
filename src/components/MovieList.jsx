@@ -44,6 +44,11 @@ const MovieList = () => {
               <h5>Not available...</h5>
             )}
           </ul>
+          <Button
+            text="Load More"
+            variant="btn_secondary"
+            onClick={() => setLimit(limit + 8)}
+          />
         </article>
       </main>
     </section>
