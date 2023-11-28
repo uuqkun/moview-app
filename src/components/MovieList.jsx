@@ -13,6 +13,12 @@ const MovieList = () => {
       updateMovies(data);
     });
   }, []);
+
+  const handleChangeTab = (e) => {
+    
+  }
+
+  console.log(limit)
   return (
     <section className="movies">
       <header className="movies__header">
@@ -27,9 +33,9 @@ const MovieList = () => {
       <main>
         <section className="movies__category">
           <ul className="movies__category-lists">
-            <Button text="All" variant="btn_primary" />
-            <Button text="Movies" />
-            <Button text="TVShows" />
+            <Button position="" text="All" variant="btn_primary" clicked={handleChangeTab}/>
+            <Button position="" text="Movies" clicked={handleChangeTab}/>
+            <Button position="" text="TVShows" clicked={handleChangeTab}/>
           </ul>
         </section>
 
@@ -46,8 +52,8 @@ const MovieList = () => {
           </ul>
           <Button
             text="Load More"
-            variant="btn_secondary"
-            onClick={() => setLimit(limit + 8)}
+            variant="btn-secondary-b"
+            clicked={() => setLimit(limit + 8)}
           />
         </article>
       </main>

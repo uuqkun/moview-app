@@ -64,6 +64,8 @@
   }
 
   main .movies__container {
+    display: block;
+    
     h4 {
       color: var(--gray-200);
       margin-bottom: 2rem;
