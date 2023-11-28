@@ -18,7 +18,7 @@ const MovieCard = ({ data }) => {
           <h5 className="gray_200">{data.title}</h5>
         </div>
         <span className="moviecard__rating">
-          <p>{data.rating}</p>
+          <p className="body-large">{data.rating}</p>
         </span>
       </article>
     </Link>

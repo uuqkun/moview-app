@@ -5,12 +5,14 @@ import { useMovieManager } from "../services/store";
 
 const MovieList = () => {
   const [limit, setLimit] = useState(8);
+  const [localMovies, setLocalMovies] = useState([]);
 
   const { movies, updateMovies } = useMovieManager();
 
   useEffect(() => {
     fetchMovies().then((data) => {
       updateMovies(data);
+      setLocalMovies(data);
     });
   }, []);
 
@@ -18,7 +20,20 @@ const MovieList = () => {
     
   }
 
-  console.log(limit)
+  const handleSearchByTitle = (e) => {
+    const { value } = e.target;
+
+    if (value.length > 4) { 
+      let iterableMovies = movies.filter((movie) => {
+        return movie.title.toLowerCase().includes(value.toLowerCase());
+      });
+
+      setLocalMovies(iterableMovies);
+    } else {
+      setLocalMovies(movies);
+    }
+  }
+
   return (
     <section className="movies">
       <header className="movies__header">
@@ -27,7 +42,7 @@ const MovieList = () => {
           List of movies and TV Shows, I, Pramod Poudel have watched till date.
           Explore what I have watched and also feel free to make a suggestion.😉
         </p>
-        <Searchbar />
+        <Searchbar onChange={handleSearchByTitle} />
       </header>
 
       <main>
@@ -42,8 +57,8 @@ const MovieList = () => {
         <article className="movies__container">
           <h4>All ({limit})</h4>
           <ul>
-            {movies !== null ? (
-              movies
+            {localMovies !== null ? (
+              localMovies
                 .slice(0, limit)
                 .map((movie) => <MovieCard key={movie.id} data={movie} />)
             ) : (
