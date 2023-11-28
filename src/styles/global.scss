@@ -48,7 +48,7 @@
     .movies__category-lists {
       display: flex;
       gap: 24px;
-      
+
       width: -moz-fit-content;
       width: fit-content;
       margin-bottom: 2.5rem;
@@ -57,14 +57,14 @@
 
       background-color: #0000002b;
 
-      Button { 
+      Button {
         font-weight: 600;
       }
     }
   }
 
   main .movies__container {
-    h4 { 
+    h4 {
       color: var(--gray-200);
       margin-bottom: 2rem;
     }
@@ -78,7 +78,7 @@
   }
 }
 
-.moviecard { 
+.moviecard {
   width: 282px;
   // height: 480px;
 
@@ -87,7 +87,12 @@
   margin-bottom: 3rem;
   cursor: pointer;
 
-  background: linear-gradient(to bottom right, rgba($color: #fff, $alpha: 0.1), #5b4af419,#1ea3fc2a );
+  background: linear-gradient(
+    to bottom right,
+    rgba($color: #fff, $alpha: 0.1),
+    #5b4af419,
+    #1ea3fc2a
+  );
 
   position: relative;
 
@@ -101,7 +106,7 @@
     padding: 1rem;
   }
 
-  .moviecard__rating { 
+  .moviecard__rating {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -118,7 +123,101 @@
     transition: all 100ms linear;
   }
 
-  &:hover .moviecard__texts h5 { 
+  &:hover .moviecard__texts h5 {
     color: var(--gray-50);
+  }
+}
+
+// MovieDetails
+.details {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .details__hero {
+    img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 24px;
+      opacity: 0.5;
+    }
+  }
+
+  .details__body {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding-top: 12rem;
+
+    position: relative;
+
+    .details__top {
+      position: absolute;
+      top: -10%;
+
+      .details__title {
+        width: fit-content;
+        border-radius: 24px;
+        padding: 40px;
+        margin-bottom: 8rem;
+
+        background: #20283ecc;
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+
+        p {
+          color: var(--primary-200);
+          line-height: 1.4;
+        }
+
+        h3 {
+          color: var(--gray-50);
+        }
+      }
+    }
+
+    .details__bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 4rem;
+
+      img {
+        width: 480px;
+        height: 720px;
+        border-radius: 24px;
+      }
+
+      figcaption {
+        h5 {
+          color: white;
+          margin-bottom: 3rem;
+        }
+
+        .details__rating {
+          margin: 3rem 0;
+          color: orange;
+          background: #00000087;
+          width: fit-content;
+          padding: 0.5rem 1rem;
+          border-radius: 8px;
+
+          span {
+            margin-right: 1rem;
+          }
+        }
+
+        .details__attribute { 
+          margin-bottom: 4rem;
+
+          h6 { 
+            color: var(--gray-400);
+            margin-bottom: 1rem;
+          }
+
+          p { 
+            color: var(--gray-50);
+          }
+        }
+      }
+    }
   }
 }
