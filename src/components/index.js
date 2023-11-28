@@ -6,3 +6,4 @@ export { default as Searchbar } from './Searchbar';
 export { default as ThemeSwitch } from './ThemeSwitch';
 export { default as Navbar } from './Navbar';
 export { default as TvShows } from './TvShows';
+export { default as MovieDetails } from './MovieDetails';

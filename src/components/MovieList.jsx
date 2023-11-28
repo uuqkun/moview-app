@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { MovieCard, Searchbar, Button } from ".";
 import { fetchMovies } from "../services/fetch";
+import { useMovieManager } from "../services/store";
 
 const MovieList = () => {
-  const [movies, setMovies] = useState([]);
   const [limit, setLimit] = useState(8);
+
+  const { movies, updateMovies } = useMovieManager();
 
   useEffect(() => {
     fetchMovies().then((data) => {
-      setMovies(data);
+      updateMovies(data);
     });
   }, []);
   return (
