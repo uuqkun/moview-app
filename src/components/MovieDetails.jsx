@@ -48,8 +48,8 @@ const MovieDetails = () => {
                 </div>
                 <div className="details__attribute">
                   <h6>Genre(s)</h6>
-                  {selectedMovie && selectedMovie.genre.map((genre) => {
-                    return <p className="body-large">{genre}</p>;
+                  {selectedMovie && selectedMovie.genre.map((genre, i) => {
+                    return <p className="body-large" key={i}>{genre}</p>;
                   })}
                 </div>
               </figcaption>

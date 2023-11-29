@@ -38,10 +38,17 @@
 
   .movies__header {
     margin-bottom: 5rem;
+    
     p {
       width: 70%;
       margin-bottom: 2.5rem;
     }
+
+    .filters { 
+      display: flex;
+      gap: 4rem;
+    }
+
   }
 
   main .movies__category {
@@ -259,6 +266,24 @@
     &:focus {
       border: 1px solid var(--primary-400);
     }
+  }
+}
+
+// dropdowns
+select {
+  padding: 12px;
+  font-size: 14px;
+  background-color: var(--primary-400);
+  color: white;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+
+  option {
+    padding: 12px;
+    background-color: var(--primary-400);
+    color: white;
+    scrollbar-width: none;
   }
 }
 

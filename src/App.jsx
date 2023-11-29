@@ -10,7 +10,7 @@ function App() {
         <Router>
           <Navbar />
           <Routes>
-            <Route path="/" element={<h1>Welcome</h1>} />
+            <Route path="/" element={<MovieList />} />
             <Route index path="/movies" element={<MovieList />} />
             <Route path="/movies/:id" element={<MovieDetails />} />
             <Route path="/tv-shows" element={<TvShows />} />"

@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
+
 import { MovieCard, Searchbar, Button } from ".";
 import { fetchMovies } from "../services/fetch";
 import { useMovieManager } from "../services/store";
+import { extractGenres } from "../services/categories";
+import { HashTable } from "../services/sort";
 
 const MovieList = () => {
   const [limit, setLimit] = useState(8);
   const [localMovies, setLocalMovies] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [genres, setGenres] = useState();
 
   const { movies, updateMovies } = useMovieManager();
 
@@ -13,17 +18,14 @@ const MovieList = () => {
     fetchMovies().then((data) => {
       updateMovies(data);
       setLocalMovies(data);
+      setGenres(extractGenres(data));
     });
   }, []);
-
-  const handleChangeTab = (e) => {
-    
-  }
 
   const handleSearchByTitle = (e) => {
     const { value } = e.target;
 
-    if (value.length > 4) { 
+    if (value.length > 4) {
       let iterableMovies = movies.filter((movie) => {
         return movie.title.toLowerCase().includes(value.toLowerCase());
       });
@@ -32,7 +34,28 @@ const MovieList = () => {
     } else {
       setLocalMovies(movies);
     }
-  }
+  };
+
+  const handleCategoryChange = (e) => {
+    const filteredMovies = movies.filter((movie) => {
+      return movie.genre.includes(e.target.value);
+    });
+
+    const hashTable = new HashTable(100);
+
+    movies.map((movie) => {
+      movie.genre.forEach((item) => {
+        hashTable.set(item, movie);
+      });
+    });
+
+    const values = hashTable.getAllValuesByHashKey(hashTable, e.target.value);
+    console.log(values);
+
+    setLocalMovies(filteredMovies);
+    setSelectedCategory(e.target.value);
+    setLimit(filteredMovies.length);
+  };
 
   return (
     <section className="movies">
@@ -42,20 +65,29 @@ const MovieList = () => {
           List of movies and TV Shows, I, Pramod Poudel have watched till date.
           Explore what I have watched and also feel free to make a suggestion.😉
         </p>
-        <Searchbar onChange={handleSearchByTitle} />
+
+        <div className="filters">
+          <Searchbar onChange={handleSearchByTitle} />
+          <select value={selectedCategory} onChange={handleCategoryChange}>
+            {genres &&
+              genres.map((genre) => (
+                <option key={genre} value={genre}>
+                  {genre}
+                </option>
+              ))}
+          </select>
+        </div>
       </header>
 
       <main>
         <section className="movies__category">
-          <ul className="movies__category-lists">
-            <Button position="" text="All" variant="btn_primary" clicked={handleChangeTab}/>
-            <Button position="" text="Movies" clicked={handleChangeTab}/>
-            <Button position="" text="TVShows" clicked={handleChangeTab}/>
-          </ul>
+          <ul className="movies__category-lists"></ul>
         </section>
 
         <article className="movies__container">
-          <h4>All ({limit})</h4>
+          <h4>
+            {selectedCategory} ({limit})
+          </h4>
           <ul>
             {localMovies !== null ? (
               localMovies
@@ -65,11 +97,15 @@ const MovieList = () => {
               <h5>Not available...</h5>
             )}
           </ul>
-          <Button
-            text="Load More"
-            variant="btn-secondary-b"
-            clicked={() => setLimit(limit + 8)}
-          />
+          {limit <= 8 ? (
+            <p>End</p>
+          ) : (
+            <Button
+              text="Load More"
+              variant="btn-secondary-b"
+              clicked={() => setLimit(limit + 8)}
+            />
+          )}
         </article>
       </main>
     </section>
