@@ -51,28 +51,18 @@ export class HashTable {
         }
     }
 
-    displayTable(hashTable, key) {
-        const index = hashTable.hash(key);
+    getAllValues() {
+        const values = [];
 
-        for (let i = 0; i < this.size; i++) {
-            console.log(`Index ${i}:`);
-
-
-            const value = hashTable.table[index].filter((entry) => entry.key === key)
-            console.log(value)
-
-            if (hashTable.table[index]) {
-                let value = hashTable.table[index].filter((entry) => entry.key === key)
-                console.log(value)
-
-                // console.log(`  - Key: ${this.table[index].}, Value: ${value}`);
-
-            } else {
-                console.log('  - Empty');
+        for (const entry of this.table) {
+            if (entry) {
+                values.push(...entry.map((e) => e.value));
             }
         }
-    }
 
+        return values;
+    }
+    
     getAllValuesByHashKey(hashTable, hashKey) {
         const index = hashTable.hash(hashKey);
 

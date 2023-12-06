@@ -14,6 +14,7 @@ const MovieList = () => {
 
   const { movies, updateMovies } = useMovieManager();
 
+  // display all movies on initial render
   useEffect(() => {
     fetchMovies().then((data) => {
       updateMovies(data);
@@ -41,11 +42,13 @@ const MovieList = () => {
       return movie.genre.includes(e.target.value);
     });
 
+    // create a hash table
     const hashTable = new HashTable(100);
 
+    // set hash table
     movies.map((movie) => {
-      movie.genre.forEach((item) => {
-        hashTable.set(item, movie);
+      movie.genre.forEach((x) => {
+        hashTable.set(x, movie);
       });
     });
 
@@ -68,6 +71,7 @@ const MovieList = () => {
 
         <div className="filters">
           <Searchbar onChange={handleSearchByTitle} />
+
           <select value={selectedCategory} onChange={handleCategoryChange}>
             {genres &&
               genres.map((genre) => (
