@@ -13,6 +13,6 @@ function filterMoviesByName(name) {
     return movies.filter(movie => movie.name.toLowerCase().includes(name.toLowerCase()));
 }
 
-// Example usage
+// Example usagefff
 const filteredMovies = filterMoviesByName("dark");
 console.log(filteredMovies);
