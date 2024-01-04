@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const fetchMovies = async () => {
     const movies = [
         {
@@ -1820,5 +1822,16 @@ export const fetchMovies = async () => {
       console.error(error);
     }
     */
-   return movies;
+    return movies;
+};
+export const fetch = async () => {
+    try {
+        return await axios.get("http://localhost:8000/api/navlink")
+    } catch (error) {
+        console.log(error);
+    }
+
+    return {
+        message: "error",
+    };
 };
